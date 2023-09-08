@@ -29,18 +29,14 @@ public class AboutMe : MonoBehaviour
         {
             time += Time.deltaTime;
             
-
             if(time > 15)
             {
                 foreach (var l in Letters)
                 {
                     l.GetComponent<SpriteRenderer>().color = originalColor;
                 }
+                time = 0;
             }
-        }
-        else
-        {
-            time = 0;
         }
     }
 
@@ -51,13 +47,7 @@ public class AboutMe : MonoBehaviour
             isTriggered = true;
             foreach (var l in Letters)
             {
-                while (coolDown < 5)
-                {
-                    coolDown += Time.deltaTime;
-                    if (coolDown > 5)
-                        l.GetComponent<SpriteRenderer>().color = new Vector4(Random.Range(0, 165), Random.Range(0, 70), Random.Range(0, 125), 255.0f).normalized;
-                }
-                coolDown = 0;
+                l.GetComponent<SpriteRenderer>().color = new Vector4(Random.Range(0, 165), Random.Range(0, 70), Random.Range(0, 125), 255.0f).normalized;
             }
         }
     }
