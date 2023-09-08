@@ -50,3 +50,6 @@ TagManager:
   - name: Decorations
     uniqueID: 1251416613
     locked: 0
+  - name: TopLayer
+    uniqueID: 4203881853
+    locked: 0

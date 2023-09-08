@@ -17,7 +17,6 @@ public class SkillsTable : MonoBehaviour
                 SkillsPanel.SetActive(true);
             }
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
