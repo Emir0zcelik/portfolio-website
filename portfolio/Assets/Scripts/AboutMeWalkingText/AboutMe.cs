@@ -7,17 +7,19 @@ public class AboutMe : MonoBehaviour
 {
     private SpriteRenderer sprite;
 
+    [SerializeField] private GameObject[] Letters;
+
     private bool isTriggered;
-    private bool isTime;
+    private float coolDown = 0;
     private Vector4 originalColor;
 
-    private float time;
+    private float time = 0;
+
 
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-
-        originalColor = sprite.color;
+        originalColor = new Vector4(0.0f, 0.0f, 0.0f, 0.0f);
         isTriggered = true;
     }
 
@@ -26,12 +28,19 @@ public class AboutMe : MonoBehaviour
         if (!isTriggered) 
         {
             time += Time.deltaTime;
-            if(time > 30)
+            
+
+            if(time > 15)
             {
-                sprite.color = originalColor;
-                time = 0;
-                isTriggered = true;
+                foreach (var l in Letters)
+                {
+                    l.GetComponent<SpriteRenderer>().color = originalColor;
+                }
             }
+        }
+        else
+        {
+            time = 0;
         }
     }
 
@@ -40,7 +49,16 @@ public class AboutMe : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
-            sprite.color = new Vector4(Random.Range(0, 150), Random.Range(0, 150), Random.Range(0, 150), 255.0f).normalized;
+            foreach (var l in Letters)
+            {
+                while (coolDown < 5)
+                {
+                    coolDown += Time.deltaTime;
+                    if (coolDown > 5)
+                        l.GetComponent<SpriteRenderer>().color = new Vector4(Random.Range(0, 165), Random.Range(0, 70), Random.Range(0, 125), 255.0f).normalized;
+                }
+                coolDown = 0;
+            }
         }
     }
 
