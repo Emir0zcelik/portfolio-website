@@ -31,6 +31,7 @@ public class Parchments : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Panel.SetActive(false);
             isPanel = false;
         }
     }
