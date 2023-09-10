@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class SaveTheNatureCode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool isTriggered = false;
+    private void Update()
     {
-        
+        if (isTriggered)
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                Application.OpenURL("https://github.com/Emir0zcelik/Greeny-Game-Jam");
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTriggered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTriggered = false;
+        }
     }
 }
