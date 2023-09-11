@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Mail : MonoBehaviour
 {
+    [SerializeField] GameObject Panel;
     private bool isTriggered = false;
     private void Update()
     {
@@ -11,9 +12,14 @@ public class Mail : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                //Application.OpenURL("https://mail.google.com/mail/u/1/#inbox?compose=CllgCJqWgPVSPTSRBzBKPzRvdkTGnxRCMpRGmMRgGPDWHqKJkJtvkQFrJscMjVRlJHdMdMFKbCL");
+                Panel.SetActive(true);
             }
         }
+    }
+
+    public void ClosePanel()
+    {
+        Panel.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,6 +35,7 @@ public class Mail : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = false;
+            Panel.SetActive(false);
         }
     }
 }
