@@ -4,15 +4,89 @@ using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject ChatBox;
+    [SerializeField] GameObject[] texts;
+    [SerializeField] GameObject exclamationMark;
+
+    private bool isTriggered;
+    private bool isPressed;
+
+    private int count;
+
+    private float time;
+    private float coolDown;
+    private void Start()
     {
+        isTriggered = false;
+        isPressed = false;
+        count = 0;
+        time = 0;
+        coolDown = 0;
+    }
+
+    private void Update()
+    {
+        if (isTriggered)
+        {
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                isPressed = true;
+            }
+        }
+
+        if (count > texts.Length)
+        {
+            ChatBox.SetActive(false);
+            isPressed = false;
+
+            foreach (var text in texts)
+            {
+                text.SetActive(false);
+            }
+        }
+
+        if (isPressed && count != texts.Length + 1) 
+        {
+            if (time < 5)
+            {
+                time += Time.deltaTime;
+                coolDown -= Time.deltaTime;
+                ChatBox.SetActive(true);
+                exclamationMark.SetActive(false);
+
+                if (coolDown <= 0)
+                {
+                    texts[count++].SetActive(true);
+                    coolDown = 5;
+                }
+            }
+            else
+            {
+                time = 0;
+                isPressed =  false;
+                ChatBox.SetActive(false);
+                if (count != texts.Length)
+                    exclamationMark.SetActive(true);
+
+                foreach (var text in texts)
+                {
+                    text.SetActive(false);
+                }
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTriggered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isTriggered = false;
     }
 }
