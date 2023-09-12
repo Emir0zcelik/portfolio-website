@@ -8,15 +8,18 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] GameObject[] texts;
     [SerializeField] GameObject exclamationMark;
 
+    private Animator animator;
+
     private bool isTriggered;
     private bool isPressed;
-
     private int count;
-
     private float time;
     private float coolDown;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         isTriggered = false;
         isPressed = false;
         count = 0;
@@ -36,6 +39,8 @@ public class NPCDialogue : MonoBehaviour
 
         if (count > texts.Length)
         {
+            animator.SetBool("isTalk", false);
+
             ChatBox.SetActive(false);
             isPressed = false;
 
@@ -49,6 +54,8 @@ public class NPCDialogue : MonoBehaviour
         {
             if (time < 5)
             {
+                animator.SetBool("isTalk", true);
+
                 time += Time.deltaTime;
                 coolDown -= Time.deltaTime;
                 ChatBox.SetActive(true);
@@ -62,6 +69,8 @@ public class NPCDialogue : MonoBehaviour
             }
             else
             {
+                animator.SetBool("isTalk", false);
+
                 time = 0;
                 isPressed =  false;
                 ChatBox.SetActive(false);
