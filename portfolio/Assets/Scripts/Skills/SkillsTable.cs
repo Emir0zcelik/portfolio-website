@@ -36,7 +36,7 @@ public class SkillsTable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isSkillsPanel = true;
+            isSkillsPanel = false;
             SkillsPanel.SetActive(false);
         }
     }
