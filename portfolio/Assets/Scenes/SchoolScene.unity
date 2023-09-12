@@ -3151,7 +3151,7 @@ GameObject:
   - component: {fileID: 792438509}
   m_Layer: 0
   m_Name: IEEE
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37907,7 +37907,7 @@ GameObject:
   - component: {fileID: 1500560103}
   m_Layer: 0
   m_Name: CyberBees
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49582,7 +49582,7 @@ GameObject:
   - component: {fileID: 1808227619}
   m_Layer: 0
   m_Name: Degree
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52441,7 +52441,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7744884499907896911, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1957231095}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2238393594899619537, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
 --- !u!1 &2107384162
 GameObject:

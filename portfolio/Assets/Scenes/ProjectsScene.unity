@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 54742322}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,6 +494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppleSurvivalCode
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -568,6 +572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AppleSurvivalPlay
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1839953101420468487, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -613,7 +621,7 @@ GameObject:
   - component: {fileID: 205948803}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -847,11 +855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6847682800080880631, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6847682800080880631, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1251416613
+      value: -91085443
       objectReference: {fileID: 0}
     - target: {fileID: 7744884499907896911, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
       propertyPath: m_RootOrder
@@ -903,7 +911,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7744884499907896911, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1645870620}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2238393594899619537, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7a7d19cfb8aa6d84caa246f232d8b0a3, type: 3}
 --- !u!4 &244223067 stripped
 Transform:
@@ -1018,7 +1029,7 @@ GameObject:
   - component: {fileID: 262904357}
   m_Layer: 0
   m_Name: Maze
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1634,6 +1645,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightSecondPlay
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1839953101420468487, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -1679,7 +1694,7 @@ GameObject:
   - component: {fileID: 914311313}
   m_Layer: 0
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49396,6 +49411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightSecondCode
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -49723,6 +49742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveTheNaturePlay
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1839953101420468487, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -49809,6 +49832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoloRendererCode
       objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -49882,6 +49909,10 @@ PrefabInstance:
     - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
       propertyPath: m_Name
       value: SaveTheNatureCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49973,7 +50004,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1251416613
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 62cd293896f42f141b2883d90d91be30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -50000,7 +50031,7 @@ GameObject:
   - component: {fileID: 1217106816}
   m_Layer: 0
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50231,7 +50262,7 @@ GameObject:
   - component: {fileID: 1237360024}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81200,7 +81231,7 @@ GameObject:
   - component: {fileID: 1426654101}
   m_Layer: 0
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81574,7 +81605,7 @@ GameObject:
   - component: {fileID: 1439198367}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81893,7 +81924,7 @@ GameObject:
   - component: {fileID: 1514210350}
   m_Layer: 0
   m_Name: Code
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137138,6 +137169,10 @@ PrefabInstance:
     - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
       propertyPath: m_Name
       value: ProceduralGenerationCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283937958895929473, guid: a06960ba1a4c34942a06deda557cc6e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
