@@ -13,6 +13,7 @@ public class Mail : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 Panel.SetActive(true);
+                Cursor.visible = true;
             }
         }
     }
@@ -20,6 +21,7 @@ public class Mail : MonoBehaviour
     public void ClosePanel()
     {
         Panel.SetActive(false);
+        Cursor.visible = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +38,7 @@ public class Mail : MonoBehaviour
         {
             isTriggered = false;
             Panel.SetActive(false);
+            Cursor.visible = false;
         }
     }
 }

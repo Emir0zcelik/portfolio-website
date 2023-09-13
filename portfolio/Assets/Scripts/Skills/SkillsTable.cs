@@ -15,6 +15,7 @@ public class SkillsTable : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 SkillsPanel.SetActive(true);
+                Cursor.visible = true;
             }
         }
     }
@@ -30,6 +31,7 @@ public class SkillsTable : MonoBehaviour
     public void CloseSkillsTable()
     {
         SkillsPanel.SetActive(false);
+        Cursor.visible = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -38,6 +40,7 @@ public class SkillsTable : MonoBehaviour
         {
             isSkillsPanel = false;
             SkillsPanel.SetActive(false);
+            Cursor.visible = false;
         }
     }
 }

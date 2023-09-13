@@ -15,6 +15,7 @@ public class Parchments : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 Panel.SetActive(true);
+                Cursor.visible = true;
             }
         }
     }
@@ -33,11 +34,13 @@ public class Parchments : MonoBehaviour
         {
             Panel.SetActive(false);
             isPanel = false;
+            Cursor.visible = false;
         }
     }
 
     public void CloseParchment()
     {
         Panel.SetActive(false);
+        Cursor.visible = false;
     }
 }

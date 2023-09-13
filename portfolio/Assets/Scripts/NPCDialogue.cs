@@ -12,6 +12,7 @@ public class NPCDialogue : MonoBehaviour
 
     private bool isTriggered;
     private bool isPressed;
+    private bool isSkipped;
     private int count;
     private float time;
     private float coolDown;
@@ -22,6 +23,7 @@ public class NPCDialogue : MonoBehaviour
 
         isTriggered = false;
         isPressed = false;
+        isSkipped = false;
         count = 0;
         time = 0;
         coolDown = 0;
@@ -34,8 +36,15 @@ public class NPCDialogue : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.E))
             {
                 isPressed = true;
+                if(count > 0)
+                {
+                    coolDown = 0;
+                    texts[count - 1].SetActive(false);
+                }
             }
         }
+
+        Debug.Log(count);
 
         if (count > texts.Length)
         {
@@ -50,7 +59,7 @@ public class NPCDialogue : MonoBehaviour
             }
         }
 
-        if (isPressed && count != texts.Length + 1) 
+        if (isPressed && count <= texts.Length) 
         {
             if (time < 5)
             {
@@ -60,11 +69,11 @@ public class NPCDialogue : MonoBehaviour
                 coolDown -= Time.deltaTime;
                 ChatBox.SetActive(true);
                 exclamationMark.SetActive(false);
-
+                
                 if (coolDown <= 0)
-                {
-                    texts[count++].SetActive(true);
-                    coolDown = 5;
+                {           
+                    texts[count++].SetActive(true);    
+                    coolDown = 7;
                 }
             }
             else
