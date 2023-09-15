@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainAreaDoor : MonoBehaviour
 {
+    [SerializeField] private string mDoorName;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene(mDoorName);
         }
     }
 }
