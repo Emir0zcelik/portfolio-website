@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Github : MonoBehaviour
 {
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
+
     private bool isTriggered = false;
     private void Update()
     {
         if (isTriggered)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (press.isPressed())
             {
                 Application.OpenURL("https://github.com/Emir0zcelik");
+                interactButton.SetIsButtonPressed(false);
             }
         }
     }
@@ -29,6 +33,7 @@ public class Github : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = false;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 }

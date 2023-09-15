@@ -8,6 +8,9 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] GameObject[] texts;
     [SerializeField] GameObject exclamationMark;
 
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
+
     private Animator animator;
 
     private bool isTriggered;
@@ -33,7 +36,7 @@ public class NPCDialogue : MonoBehaviour
     {
         if (isTriggered)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (press.isPressed())
             {
                 isPressed = true;
                 if(count > 0)
@@ -41,10 +44,9 @@ public class NPCDialogue : MonoBehaviour
                     coolDown = 0;
                     texts[count - 1].SetActive(false);
                 }
+                interactButton.SetIsButtonPressed(false);
             }
         }
-
-        Debug.Log(count);
 
         if (count > texts.Length)
         {
@@ -100,11 +102,13 @@ public class NPCDialogue : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isTriggered = false;
+        interactButton.SetIsButtonPressed(false);
     }
 }

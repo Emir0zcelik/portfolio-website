@@ -6,16 +6,19 @@ using UnityEngine;
 public class SkillsTable : MonoBehaviour
 {
     [SerializeField] private GameObject SkillsPanel;
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
 
     private bool isSkillsPanel = false;
     private void Update()
     {
         if(isSkillsPanel)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (press.isPressed())
             {
                 SkillsPanel.SetActive(true);
                 Cursor.visible = true;
+                interactButton.SetIsButtonPressed(false);
             }
         }
     }
@@ -41,6 +44,7 @@ public class SkillsTable : MonoBehaviour
             isSkillsPanel = false;
             SkillsPanel.SetActive(false);
             Cursor.visible = false;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 }
