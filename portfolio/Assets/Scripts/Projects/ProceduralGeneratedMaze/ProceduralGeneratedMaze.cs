@@ -32,6 +32,9 @@ public class ProceduralGeneratedMaze : MonoBehaviour
 
     [SerializeField] private GameObject wall;
 
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
+
     private bool isTriggered = false;
     private float time = 0;
     private bool isTime = false;
@@ -52,7 +55,7 @@ public class ProceduralGeneratedMaze : MonoBehaviour
     {
         if (isTriggered)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (press.isPressed())
             {
                 sprite.color = new Vector4((orgColor.x - 0.55f), sprite.color.g, sprite.color.b, sprite.color.a);
                 isTime = true;
@@ -60,6 +63,7 @@ public class ProceduralGeneratedMaze : MonoBehaviour
                 InitializeMap();
                 Generate();
                 DrawMap();
+                interactButton.SetIsButtonPressed(false);
             }
         }
 
@@ -184,6 +188,7 @@ public class ProceduralGeneratedMaze : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 
@@ -192,6 +197,7 @@ public class ProceduralGeneratedMaze : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = false;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 }

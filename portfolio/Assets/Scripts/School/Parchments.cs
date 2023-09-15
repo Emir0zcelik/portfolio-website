@@ -5,6 +5,8 @@ using UnityEngine;
 public class Parchments : MonoBehaviour
 {
     [SerializeField] private GameObject Panel;
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
 
     private bool isPanel = false;
 
@@ -12,10 +14,11 @@ public class Parchments : MonoBehaviour
     {
         if (isPanel)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (press.isPressed())
             {
                 Panel.SetActive(true);
                 Cursor.visible = true;
+                interactButton.SetIsButtonPressed(false);
             }
         }
     }
@@ -25,6 +28,7 @@ public class Parchments : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isPanel = true;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 
@@ -35,6 +39,7 @@ public class Parchments : MonoBehaviour
             Panel.SetActive(false);
             isPanel = false;
             Cursor.visible = false;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class LightSecondPlay : MonoBehaviour
 {
+    [SerializeField] private IsButtonPressed press;
+    [SerializeField] private InteractButton interactButton;
     private bool isTriggered = false;
     private void Update()
     {
         if (isTriggered)
         {
-            if (Input.GetKeyUp(KeyCode.E))
+            if (press.isPressed())
             {
                 Application.OpenURL("https://sayuri1.itch.io/light-second");
+                interactButton.SetIsButtonPressed(false);
             }
         }
     }
@@ -21,6 +24,7 @@ public class LightSecondPlay : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = true;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 
@@ -29,6 +33,7 @@ public class LightSecondPlay : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = false;
+            interactButton.SetIsButtonPressed(false);
         }
     }
 }
