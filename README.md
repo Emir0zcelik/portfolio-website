@@ -1,3 +1,3 @@
 # portfolio-website
 
-[Go to website](https://emir-ozcelik.com)
+[Go to website](http://emir-ozcelik.com/index.html)
