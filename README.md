@@ -1,3 +1,3 @@
 # portfolio-website
 
-(https://emir-ozcelik.com)
+[GitHub Pages](https://emir-ozcelik.com)
